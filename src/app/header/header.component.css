@@ -10,3 +10,6 @@ ul.navbar-nav.ml-auto {
     margin-top: 15px;
 }
 
+.form-group.language.ml-2 {
+    width: 100px;
+}

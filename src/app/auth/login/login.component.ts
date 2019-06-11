@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
   constructor(private authService: AuthService) { }
 
   ngOnInit() {
+    
   }
 
   login() {
@@ -25,6 +26,13 @@ export class LoginComponent implements OnInit {
     // console.log(this.formData);
     const userData = {customerId: this.formData.value.customerId, password: this.formData.value.password};
     this.authService.loginUser(userData);
+    this.authService.errors.subscribe(
+      data => {
+        this.isLoading = false;
+      }
+    )
+    this.isLoading = false;
   }
+
 
 }

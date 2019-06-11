@@ -1,1 +1,70 @@
-working in progress
+<div class="container mt-4">
+        <div class="row">
+          <div class="col-12">
+            <h4>Fund Transfer</h4>
+      
+            <form class="form-horizontal" [formGroup]="transfer" (ngSubmit)="onSubmit()">
+              
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="account">A/C No:</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" formControlName="account" disabled>
+                </div>
+              </div>
+    
+              <div class="form-group">
+                  <label class="control-label col-sm-2" for="accountBalance">A/C Balance:</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" formControlName="accountBalance" disabled>
+                  </div>       
+                </div>
+    
+    
+              <div class="form-group">
+                  <label class="control-label col-sm-2 bane" for="beneficiary" style="width: 20px;">Beneficiary A/C:</label>
+                  <div class="col-sm-10">
+                    <select class='form-control' formControlName = "beneficiary">
+                      <option *ngFor="let user of beneficiary" [ngValue]="user.customerId">{{user.customerName}}--{{user.customerId}}</option> 
+                    </select>
+                    <span *ngIf="!transfer.get('beneficiary').valid && transfer.get('beneficiary').touched">
+                           Please select beneficiary 
+                    </span>
+                  </div>
+                </div>
+           
+            
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="amount">Amount:</label>
+                <div class="col-sm-10">
+                  <input type="number" class="form-control" placeholder="Enter Amount" formControlName="amount">
+                  <span *ngIf="!transfer.get('amount').valid && transfer.get('amount').touched">
+                      Amount is required
+                  </span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="comment">Comment:</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" placeholder="Enter Comment" formControlName="comment">
+                </div>
+              </div>   
+              <div class="form-group">
+                    <label class="control-label col-sm-2" for="comment">Date:</label>
+                    <div class="col-sm-10">
+                            <input  [matDatepicker]="picker1" placeholder="Angular forms" [formControl]="date"  disabled>
+                    <mat-datepicker #picker1></mat-datepicker>
+                    </div>
+            </div>           
+              <div class="form-group"> 
+                <div class="col-sm-offset-2 col-sm-10 ">
+                  <button type="submit" class="btn btn-default btn-warning mr-4">Transfer</button>
+                  <button type="submit" class="btn btn-default btn-danger">Reset</button>
+                </div>
+              </div>
+      
+            </form>
+            
+          </div>
+        </div>
+      </div>
+      

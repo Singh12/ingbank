@@ -1,12 +1,43 @@
 <div class="row">
   <div class="col-12">
-      <div class="card" >
-          <div class="card-body">
-            <h5 class="card-title colortitle mb-3">ING TMRW'S CRYSTAL A/C</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Savings A/c of {{profiles.customerName}}</h6>
-            <p class="card-text">A/C Number: {{profiles.customerId}} </p>
-            <p class="card-text">A/C Balance: {{profiles.balance}}</p>
-          </div>
-        </div>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title colortitle mb-3">ING TMRW'S CRYSTAL A/C</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Savings A/c of {{profiles.customerName}}</h6>
+        <p class="card-text">A/C Number: {{profiles.customerId}} </p>
+        <p class="card-text">A/C Balance: {{profiles.balance}}</p>
+        <p class="card-text">Created Date: {{profiles.creationDate}}</p>
+      </div>
+    </div>
   </div>
 </div>
+
+<hr>
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+     <h3> Transaction List </h3>
+
+     <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Ref Id</th>
+            <th>Transaction Detail</th>
+            <th>Amount</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let listOftrn of listOftrns" (click)="reference(listOftrn)">
+            <td>{{listOftrn.referenceId}}</td>
+            <td>{{listOftrn.toAccount}}</td>
+            <td>{{listOftrn.amount}}</td>
+            <td>{{listOftrn.date}}</td>
+          </tr>
+         
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+

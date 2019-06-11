@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BankComponent implements OnInit {
   accounts = [
-    {name: "Account Details", link: "accountDetals" },
+    {name: "Account Details", link: "accountDetails" },
     {name: "Fund Transfer", link: "fundTransfer" },
   ]
   constructor() { }

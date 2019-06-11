@@ -8,6 +8,7 @@ import { AuthService } from 'src/app/auth/auth.service';
 })
 export class AccountDetailsComponent implements OnInit {
 profiles = {};
+listOftrns: [];
   constructor(private authService: AuthService) { }
 
   ngOnInit() {
@@ -18,6 +19,18 @@ profiles = {};
         this.profiles = profile;
       }
     )
+
+    this.authService.getTransactionInfo();
+    this.authService.getTransactionDetails().subscribe(
+      data => {
+        console.log(data, 'Raj nish');
+        this.listOftrns = data;
+      }
+    )
+  }
+
+  reference(refe) {
+    console.log(refe);
   }
 
 }

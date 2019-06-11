@@ -11,11 +11,12 @@ import { LoginComponent } from './auth/login/login.component';
 import { UserComponent } from './bank/user/user.component';
 import { AccountTransferComponent } from './bank/account-transfer/account-transfer.component';
 import { AccountDetailsComponent } from './bank/account-details/account-details.component';
-
+import {MatDatepickerModule} from '@angular/material/datepicker';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { HttpClientModule } from '@angular/common/http';
 import { BankComponent } from './bank/bank.component';
+import { MatNativeDateModule } from '@angular/material/core';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +36,8 @@ import { BankComponent } from './bank/bank.component';
     MatProgressSpinnerModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     BrowserAnimationsModule
   ],
   providers: [],

@@ -1,0 +1,9 @@
+button.btn.btn-default.btn-warning.mr-4 {
+    background: #ff6200 !important;
+    color: #fff;
+}
+
+.bane {
+    max-width: 103% !important;
+    width: 200px !important;
+}
