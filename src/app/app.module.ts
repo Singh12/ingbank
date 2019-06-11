@@ -8,18 +8,33 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './auth/login/login.component';
+import { UserComponent } from './bank/user/user.component';
+import { AccountTransferComponent } from './bank/account-transfer/account-transfer.component';
+import { AccountDetailsComponent } from './bank/account-details/account-details.component';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { HttpClientModule } from '@angular/common/http';
+import { BankComponent } from './bank/bank.component';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    UserComponent,
+    AccountTransferComponent,
+    AccountDetailsComponent,
+    BankComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    MatProgressSpinnerModule,
+    ReactiveFormsModule,
+    HttpClientModule,
     BrowserAnimationsModule
   ],
   providers: [],
