@@ -30,7 +30,7 @@ listOftrns: [];
   }
 
   reference(refe) {
-    console.log(refe);
+    this.authService.transactionDatilsss(refe);
   }
 
 }

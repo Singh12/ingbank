@@ -7,6 +7,7 @@ import { AccountDetailsComponent } from './bank/account-details/account-details.
 import { AccountTransferComponent } from './bank/account-transfer/account-transfer.component';
 import { UserComponent } from './bank/user/user.component';
 import { AuthGuard } from './auth/auth.gard';
+import { TransdetailsComponent } from './bank/transdetails/transdetails.component';
 
 const routes: Routes = [
 {path:'', component: HomeComponent},
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: '', redirectTo: 'account', pathMatch: 'full'},
   {path: 'account', component: UserComponent},
   {path: 'accountDetails', component: AccountDetailsComponent},
+  {path: 'trans', component: TransdetailsComponent},
   {path: 'fundTransfer', component: AccountTransferComponent}
 ] }
 ];

@@ -17,6 +17,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { HttpClientModule } from '@angular/common/http';
 import { BankComponent } from './bank/bank.component';
 import { MatNativeDateModule } from '@angular/material/core';
+import { TransdetailsComponent } from './bank/transdetails/transdetails.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     UserComponent,
     AccountTransferComponent,
     AccountDetailsComponent,
-    BankComponent
+    BankComponent,
+    TransdetailsComponent
   ],
   imports: [
     BrowserModule,

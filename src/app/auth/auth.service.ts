@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 export class AuthService {
   authTokenCheck = new Subject<boolean>();
   error = new Subject<boolean>();
+  private idd: string;
   authTokenDataCheck = false;
   getuserId = new Subject<any>();
   userIds: string;
@@ -21,14 +22,15 @@ export class AuthService {
 
   loginUser(loginForm) {
     console.log(loginForm, 'here');
-    this.http.post<{customerId: string, status: string}>( this.url+'api/users', loginForm)
+    this.http.post<{customerId: string, status: string, id: string}>( this.url+'api/users', loginForm)
     .subscribe(
       data => {
-        console.log(data);
+        console.log(data , 'rajnnnnjjjj');
         alert(data.status);
         this.authTokenCheck.next(true);
         this.authTokenDataCheck = true;
         this.userIds = data.customerId;
+         this.idd = data.id
         console.log(this.userIds);
         this.route.navigate(['account']);
       }, error => {
@@ -62,7 +64,7 @@ export class AuthService {
   }
 
   getTransactionInfo() {
-    this.http.get(this.url+ 'api/transaction/'+this.userIds).subscribe(
+    this.http.get(this.url+ 'api/transaction/'+this.idd).subscribe(
       (data) => {
        console.log(data);
        this.transactionsubject.next(data);
@@ -103,4 +105,14 @@ getTransactionDetails() {
   }
 
 
+  transactionDatilsss(refData) {
+    refData
+    console.log(refData, 'singhhh');
+    this.http.get(this.url+'/api/transactions/'+refData.referenceId).subscribe(
+      data => {
+        console.log(data)
+      }
+    )
+   // this.route.navigate(['trans']);
+  }
 }
